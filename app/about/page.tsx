@@ -10,7 +10,7 @@ export default function AboutPage() {
       <main className="grow max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-serif font-bold mb-6">About Us</h1>
         <p className="mb-4 text-gray-700">
-          Welcome to {"NewsCast."}, your go-to destination for curated news from around the world.
+          Welcome to {"News Call Magazine"}, your go-to destination for curated news from around the world.
           Our mission is to provide timely, accurate, and comprehensive news coverage to keep you informed.
         </p>
         <p className="mb-4 text-gray-700">

@@ -16,7 +16,7 @@ export default function Header() {
       </div>
       <div className="text-center py-4">
         <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
-          <Link href="/" className="hover:none">NewsCast.</Link>
+          <Link href="/" className="hover:none">News Call Magazine</Link>
         </h1>
       </div>
       <div>

@@ -11,7 +11,7 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-serif font-bold mb-6">Privacy Policy</h1>
 
         <p className="mb-4 text-gray-700">
-          {"NewsCast."} respects your privacy. This policy explains how we collect, use, and protect your information.
+          {"News Call Magazine"} respects your privacy. This policy explains how we collect, use, and protect your information.
         </p>
 
         <h2 className="text-2xl font-semibold mt-6 mb-2">1. Information Collection</h2>

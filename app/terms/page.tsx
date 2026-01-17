@@ -11,7 +11,7 @@ export default function TermsPage() {
         <h1 className="text-4xl font-serif font-bold mb-6">Terms of Service</h1>
 
         <p className="mb-4 text-gray-700">
-          By using {"NewsCast."}, you agree to comply with and be bound by the following terms and conditions:
+          By using {"News Call Magazine"}, you agree to comply with and be bound by the following terms and conditions:
         </p>
 
         <h2 className="text-2xl font-semibold mt-6 mb-2">1. Use of Content</h2>
@@ -26,7 +26,7 @@ export default function TermsPage() {
 
         <h2 className="text-2xl font-semibold mt-6 mb-2">3. Limitation of Liability</h2>
         <p className="mb-4 text-gray-700">
-          Newscast. is not responsible for the accuracy of third-party content and disclaims liability for any damages resulting from the use of this site.
+          {"News Call Magazine"} is not responsible for the accuracy of third-party content and disclaims liability for any damages resulting from the use of this site.
         </p>
 
         <h2 className="text-2xl font-semibold mt-6 mb-2">4. Changes</h2>

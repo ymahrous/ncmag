@@ -15,7 +15,7 @@ export const sans = Inter({
 
 
 export const metadata: Metadata = {
-  title: "NewsCast.",
+  title: "News Call Magazine",
   description: "B-ringing the news",
 };
 
