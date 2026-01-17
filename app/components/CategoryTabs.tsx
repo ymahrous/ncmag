@@ -1,4 +1,5 @@
 "use client";
+
 type Props = {
   categories: string[];
   selected: string;
@@ -11,7 +12,17 @@ export default function CategoryTabs({ categories, selected, onSelect }: Props) 
       <ul className="flex gap-6 overflow-x-auto text-sm font-medium px-4 py-2 max-w-6xl mx-auto">
         {categories.map((cat) => (
           <li key={cat}>
-            <button onClick={() => onSelect(cat)} className={`capitalize whitespace-nowrap ${selected === cat ? "text-black border-b-2 border-black pb-1": "text-gray-600 hover:text-black"}`}>{cat}</button>
+            <button
+              onClick={() => onSelect(cat)}
+              className={`
+                capitalize whitespace-nowrap pb-1 transition-colors duration-200
+                ${selected === cat 
+                  ? "text-black border-b-2 border-black font-semibold" 
+                  : "text-gray-600 hover:text-black"}
+              `}
+            >
+              {cat}
+            </button>
           </li>
         ))}
       </ul>

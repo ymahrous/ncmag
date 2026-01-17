@@ -5,10 +5,6 @@ import { RawArticle } from "@/types/article";
 import LeadStory from "./components/LeadStory";
 import ArticleRow from "./components/ArticleRow";
 import { useEffect, useState, useMemo } from "react";
-import SectionBlock from "./components/SectionBlock";
-import CategoryTabs from "@/app/components/CategoryTabs";
-
-const categories = ["world", "politics", "business", "technology", "sports"];
 
 export default function HomePage() {
   const [selected, setSelected] = useState("world");
@@ -37,12 +33,7 @@ export default function HomePage() {
   return (
     <div >
       <Header />
-      <main className="flex-grow nyt-container">
-        <CategoryTabs
-          categories={categories}
-          selected={selected}
-          onSelect={setSelected}
-        />
+      <main className="grow nyt-container">
         {loading ? (<p className="text-center py-12 text-gray-500">Loading…</p>): (
           <>
             {/* TOP GRID */}

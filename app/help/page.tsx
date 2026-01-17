@@ -27,7 +27,7 @@ export default function HelpPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-grow max-w-4xl mx-auto px-4 py-12">
+      <main className="grow max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-serif font-bold mb-6">Help & FAQ</h1>
 
         <section className="space-y-6">

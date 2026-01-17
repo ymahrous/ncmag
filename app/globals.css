@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+body {
+  font-family: var(--font-sans);
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+  /*
+  color: var(--nyt-black);
+  background: #fff;
+  line-height: 1.55;
+  */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -11,13 +23,6 @@
   --nyt-black: #121212;
   --nyt-gray: #666;
   --nyt-border: #e2e2e2;
-}
-
-body {
-  font-family: var(--font-sans);
-  color: var(--nyt-black);
-  background: #fff;
-  line-height: 1.55;
 }
 
 h1, h2, h3 {
