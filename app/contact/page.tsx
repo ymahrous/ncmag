@@ -7,22 +7,20 @@ import Footer from "@/app/components/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({name: "", email: "", message: ""});
-  const serviceId = process.env.SERVICE_ID;
-  const templateId = process.env.TEMP_ID;
-  const userId = process.env.USER_ID;
+  const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+  const templateId = process.env.NEXT_PUBLIC_TEMP_ID;
+  const userId = process.env.NEXT_PUBLIC_USER_ID;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      if(!serviceId || !templateId || !userId) {
-        toast.success("weird");
-        return;
-      };
+      if(!serviceId || !templateId || !userId) return;
       await send(serviceId, templateId, formData, userId);
       toast.success("Message sent! We'll get back to you soon.");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Error sending email:", error);
+      console.log(formData)
       toast.error("Unable to send message. Please try again.");
     }
   };
@@ -44,7 +42,7 @@ export default function ContactPage() {
         </p>
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Email</h2>
-          <p className="text-gray-700">support@newscast.org</p>
+          <p className="text-gray-700">support@vercel.com</p>
         </section>
         <section>
           <h2 className="text-2xl font-semibold mb-4">Send us a message</h2>
