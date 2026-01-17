@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +7,50 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --nyt-black: #121212;
+  --nyt-gray: #666;
+  --nyt-border: #e2e2e2;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  color: var(--nyt-black);
+  background: #fff;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.nyt-h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+.nyt-h2 { font-size: 1.4rem; }
+.nyt-h3 { font-size: 1.05rem; }
+
+.meta {
+  font-size: 0.75rem;
+  color: var(--nyt-gray);
+}
+
+.nyt-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.nyt-divider {
+  border-top: 1px solid var(--nyt-border);
+  margin: 2rem 0 1rem;
+}
+
+.article-row {
+  border-bottom: 1px solid var(--nyt-border);
+  padding: 0.75rem 0;
+}
+
+.article-row:last-child {
+  border-bottom: none;
 }
