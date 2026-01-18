@@ -11,36 +11,60 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-serif font-bold mb-6">Privacy Policy</h1>
 
         <p className="mb-4 text-gray-700">
-          {"News Call Magazine"} respects your privacy. This policy explains how we collect, use, and protect your information.
+          <strong>News Call Magazine</strong> respects your privacy. This policy explains how we handle your email address if you choose to subscribe to our newsletter.
         </p>
 
+        {/* 1. Information Collection */}
         <h2 className="text-2xl font-semibold mt-6 mb-2">1. Information Collection</h2>
         <p className="mb-4 text-gray-700">
-          We may collect information you provide when signing up for newsletters or contacting us, such as your email address.
+          We only collect the email address you voluntarily provide when subscribing to our newsletter.
         </p>
 
+        {/* 2. Use of Information */}
         <h2 className="text-2xl font-semibold mt-6 mb-2">2. Use of Information</h2>
         <p className="mb-4 text-gray-700">
-          Your information is used solely to provide services, send newsletters, and improve user experience. We do not sell or share your personal information.
+          Your email address is used exclusively to send newsletters and updates you have requested. We do not sell, trade, or share your email with third parties for marketing purposes.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">3. Cookies & Tracking</h2>
+        {/* 3. Third-Party Services */}
+        <h2 className="text-2xl font-semibold mt-6 mb-2">3. Third-Party Services</h2>
         <p className="mb-4 text-gray-700">
-          We use cookies and analytics tools to improve site performance and understand user behavior.
+          We may use third-party email providers to send newsletters. These providers are bound by strict privacy standards and may only use your email to deliver the newsletter.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">4. Third-Party Services</h2>
+        {/* 4. International Compliance */}
+        <h2 className="text-2xl font-semibold mt-6 mb-2">4. International Compliance</h2>
         <p className="mb-4 text-gray-700">
-          We may use third-party services for analytics or hosting, who are bound by strict privacy standards.
+          This policy applies globally. Users may request access to, correction of, or removal of their email address at any time by contacting us at <a href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></a>.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">5. Changes to Policy</h2>
+        {/* 5. Data Security */}
+        <h2 className="text-2xl font-semibold mt-6 mb-2">5. Data Security</h2>
         <p className="mb-4 text-gray-700">
-          We reserve the right to update this policy at any time. Continued use constitutes acceptance of the updated policy.
+          We implement reasonable safeguards to protect your email address. However, no method of electronic transmission is completely secure, and we cannot guarantee absolute security.
+        </p>
+
+        {/* 6. Children’s Privacy */}
+        <h2 className="text-2xl font-semibold mt-6 mb-2">6. Children{"’"}s Privacy</h2>
+        <p className="mb-4 text-gray-700">
+          Our newsletter is not directed to children under 13. We do not knowingly collect email addresses from children.
+        </p>
+
+        {/* 7. Changes to Policy */}
+        <h2 className="text-2xl font-semibold mt-6 mb-2">7. Changes to Policy</h2>
+        <p className="mb-4 text-gray-700">
+          We may update this Privacy Policy at any time. Updated policies will take effect immediately upon posting. Continued subscription constitutes acceptance of the revised policy.
+        </p>
+
+        {/* Contact */}
+        <h2 className="text-2xl font-semibold mt-6 mb-2">Contact</h2>
+        <p className="mb-4 text-gray-700">
+          If you have questions, concerns, or wish to unsubscribe from the newsletter, please contact us at: <br />
+          <a href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></a>
         </p>
       </main>
 
       <Footer />
     </div>
   );
-};
+}
