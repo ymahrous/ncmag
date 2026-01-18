@@ -1,11 +1,22 @@
 // app/api/news/aggregate.ts
 import Parser from "rss-parser";
 import { prisma } from "@/app/lib/prisma";
-import { RawArticle } from "@/types/article";
+import { RawArticle, NewsApiSource } from "@/types/article";
 import { categorize } from "@/app/lib/categorize";
 import { NextRequest, NextResponse } from "next/server";
 
 const API_SECRET = process.env.ARTICLES_API_SECRET;
+
+type NewsApiArticle = {
+  title: string
+    description?: string
+    content?: string
+    source?: string | NewsApiSource
+    category?: string
+    publishedAt?: string
+    url: string
+    urlToImage?: string
+};
 
 function normalizeSource(
   source: RawArticle["source"]
@@ -111,7 +122,7 @@ async function fetchNewsApiArticles(): Promise<RawArticle[]> {
       )
       const data = await res.json()
       if (data.articles) {
-        data.articles.forEach((item: RawArticle) => {
+        data.articles.forEach((item: NewsApiArticle) => {
           if (!item.url || !item.title) return;
           articles.push({
             title: item.title,
@@ -121,7 +132,7 @@ async function fetchNewsApiArticles(): Promise<RawArticle[]> {
             source: item.source ?? "NewsAPI",
             category, // request category as default
             publishedAt: item.publishedAt,
-            imageUrl: item.imageUrl
+            imageUrl: item.urlToImage || undefined
           })
         })
       }
