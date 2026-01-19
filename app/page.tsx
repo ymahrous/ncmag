@@ -36,21 +36,20 @@ export default function HomePage() {
       <main className="grow nyt-container">
         {loading ? (<p className="text-center py-12 text-gray-500">Loading…</p>): (
           <>
-            {/* TOP GRID */}
             <section className="grid lg:grid-cols-3 gap-8 mt-6">
-              {/* LEAD */}
+              
               <div className="lg:col-span-2">
                 {lead && <LeadStory {...lead} />}
               </div>
-              {/* SECONDARY */}
+              
               <aside className="space-y-4">
                 {secondary.map(a => (
                   <ArticleRow key={a.url} {...a} />
                 ))}
               </aside>
             </section>
-            {/* CATEGORY FEED */}
-            <div className="nyt-divider" />
+
+            {/* <div className="nyt-divider" /> */}
             <section>
               <h2 className="nyt-h2 capitalize mb-4">
                 {selected === "world" ? "Latest News" : selected}
@@ -61,7 +60,7 @@ export default function HomePage() {
                 ))}
               </div>
             </section>
-            {/* FIXED SECTIONS */}
+            
             {/* <SectionBlock title="Politics" articles={articles.filter(a => a.category === "politics")} />
             <SectionBlock title="Business" articles={articles.filter(a => a.category === "business")} />
             <SectionBlock title="Technology" articles={articles.filter(a => a.category === "technology")} />

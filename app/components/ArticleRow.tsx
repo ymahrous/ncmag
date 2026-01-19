@@ -17,14 +17,15 @@ export default function ArticleRow({
   const slug = slugify(title);
 
   return (
-    <Link
-      href={`/article/${slug}`}
-      className="flex gap-4 py-4 border-b hover:bg-gray-50 transition cursor-pointer"
+    <div
+      className="flex gap-4 py-4 border-b transition hover:bg-gray-50 "
     >
       <div className="flex-1">
+        <Link href={`/article/${slug}`} className="cursor-pointer transition hover:underline">
         <h3 className="font-serif text-lg font-semibold leading-snug">
           {title}
         </h3>
+        </Link>
         {description && (
           <p className="text-sm text-gray-600 mt-1 line-clamp-2">
             {description}
@@ -42,6 +43,6 @@ export default function ArticleRow({
           alt={title}
         />
       )}
-    </Link>
+    </div>
   );
 }
