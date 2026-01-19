@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RawArticle } from "@/types/article";
 import Header from "@/app/components/Header";
@@ -73,7 +74,7 @@ export default function ArticlePage() {
         <p className="mb-6 text-gray-700 leading-relaxed">{cleanContent}</p>
 
         {/* Original article link */}
-        <a href={article.url} target="_blank" rel="noopener noreferrer" className="inline-block bg-gray-900 text-white px-6 py-2 rounded hover:bg-gray-800 transition">Source Article</a>
+        <Link href={article.url} target="_blank" rel="noopener noreferrer" className="inline-block border border-black px-6 py-3 text-sm font-medium hover:bg-black hover:text-white transition">Source Article</Link>
       </main>
       <Footer />
     </div>

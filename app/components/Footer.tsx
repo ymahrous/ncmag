@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 const API_SECRET = process.env.NEXT_PUBLIC_API_SECRET;
 
@@ -40,11 +41,11 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold uppercase mb-4">News</h3>
           <ul className="space-y-2 text-gray-700">
-            <li><a href="/world" target="_blank" className="hover:underline">World</a></li>
-            <li><a href="/politics" target="_blank" className="hover:underline">Politics</a></li>
-            <li><a href="/business" target="_blank" className="hover:underline">Business</a></li>
-            <li><a href="/technology" target="_blank" className="hover:underline">Technology</a></li>
-            <li><a href="/sports" target="_blank" className="hover:underline">Sports</a></li>
+            <li><Link href="/world" target="_blank" className="hover:underline">World</Link></li>
+            <li><Link href="/politics" target="_blank" className="hover:underline">Politics</Link></li>
+            <li><Link href="/business" target="_blank" className="hover:underline">Business</Link></li>
+            <li><Link href="/technology" target="_blank" className="hover:underline">Technology</Link></li>
+            <li><Link href="/sports" target="_blank" className="hover:underline">Sports</Link></li>
           </ul>
         </div>
 
@@ -52,11 +53,11 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold uppercase mb-4">Useful links</h3>
           <ul className="space-y-2 text-gray-700">
-            <li><a href="/about" target="_blank" className="hover:underline">About Us</a></li>
-            <li><a href="/contact" target="_blank" className="hover:underline">Contact</a></li>
-            <li><a href="/help" target="_blank" className="hover:underline">Help</a></li>
-            <li><a href="/terms" target="_blank" className="hover:underline">Terms</a></li>
-            <li><a href="/privacy" target="_blank" className="hover:underline">Privacy</a></li>
+            <li><Link href="/about" target="_blank" className="hover:underline">About Us</Link></li>
+            <li><Link href="/contact" target="_blank" className="hover:underline">Contact</Link></li>
+            <li><Link href="/help" target="_blank" className="hover:underline">Help</Link></li>
+            <li><Link href="/terms" target="_blank" className="hover:underline">Terms</Link></li>
+            <li><Link href="/privacy" target="_blank" className="hover:underline">Privacy</Link></li>
           </ul>
         </div>
 
@@ -65,11 +66,11 @@ export default function Footer() {
           <h3 className="text-lg font-bold uppercase mb-4">Newsletter</h3>
           <p className="text-gray-700 mb-2">Get the latest news delivered to your inbox.</p>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="grow border border-gray-300 px-3 py-2 rounded"
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="grow border border-gray-300 px-3 py-2"
             />
             <button
               type="submit"
-              className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 transition cursor-pointer"
+              className="inline-block border border-black px-6 py-3 text-sm font-medium hover:bg-black hover:text-white transition cursor-pointer"
             >
               Subscribe
             </button>
@@ -78,17 +79,17 @@ export default function Footer() {
         </div>
 
         {/* Column 4: Language */}
-        <div className="md:col-span-1">
+        {/* <div className="md:col-span-3">
           <h3 className="text-lg font-bold uppercase mb-4">Language</h3>
           <select className="w-full border border-gray-300 px-3 py-2 rounded">
             <option value="en">English</option>
-            {/* 
+            
             <option value="es">Spanish</option>
             <option value="fr">French</option>
             <option value="de">German</option> 
-            */}
+           
           </select>
-        </div>
+        </div> */}
       </div>
 
       <div className="border-t border-gray-300 mt-8 py-4 text-center text-sm text-gray-500">

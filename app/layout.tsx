@@ -17,6 +17,12 @@ export const sans = Inter({
 export const metadata: Metadata = {
   title: "News Call Magazine",
   description: "B-ringing the news",
+  openGraph: {
+    title: "News Call Magazine",
+    description: "B-ringing the news",
+    url: "https://ncmag.vercel.app",
+    // images: ["/favicon.ico"],
+  },
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {

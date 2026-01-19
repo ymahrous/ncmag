@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
@@ -35,7 +36,7 @@ export default function PrivacyPage() {
         {/* 4. International Compliance */}
         <h2 className="text-2xl font-semibold mt-6 mb-2">4. International Compliance</h2>
         <p className="mb-4 text-gray-700">
-          This policy applies globally. Users may request access to, correction of, or removal of their email address at any time by contacting us at <a href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></a>.
+          This policy applies globally. Users may request access to, correction of, or removal of their email address at any time by contacting us at <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>.
         </p>
 
         {/* 5. Data Security */}
@@ -60,7 +61,7 @@ export default function PrivacyPage() {
         <h2 className="text-2xl font-semibold mt-6 mb-2">Contact</h2>
         <p className="mb-4 text-gray-700">
           If you have questions, concerns, or wish to unsubscribe from the newsletter, please contact us at: <br />
-          <a href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></a>
+          <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>
         </p>
       </main>
 

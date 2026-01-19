@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
@@ -38,7 +39,7 @@ export default function TermsPage() {
         {/* 4. Legal Compliance and Licensing */}
         <h2 className="text-2xl font-semibold mt-6 mb-2">4. Legal Compliance and Licensing</h2>
         <p className="mb-4 text-gray-700">
-          News Call Magazine respects copyright and intellectual property laws. We strive to properly credit sources and link to original content. If you are a rights holder and believe that your content has been used improperly, please contact us at <a href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></a>. We will investigate and remove infringing content promptly.
+          News Call Magazine respects copyright and intellectual property laws. We strive to properly credit sources and link to original content. If you are a rights holder and believe that your content has been used improperly, please contact us at <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>. We will investigate and remove infringing content promptly.
         </p>
         <p className="mb-4 text-gray-700">
           You agree to use the Services only in accordance with applicable local and international laws.
@@ -86,7 +87,7 @@ export default function TermsPage() {
           Content is presented on our website for informational, educational, and non-commercial purposes under principles similar to “fair use.” Users may view, share, and cite content for personal or educational purposes. Commercial reproduction, redistribution, or modification of content without permission from the original publisher is strictly prohibited.
         </p>
         <p className="mb-4 text-gray-700">
-          If you are the copyright holder of any content displayed on News Call Magazine and believe it has been used without proper authorization, please contact us immediately at <a href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></a>. We will investigate and remove or properly attribute content promptly in accordance with applicable copyright law.
+          If you are the copyright holder of any content displayed on News Call Magazine and believe it has been used without proper authorization, please contact us immediately at <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>. We will investigate and remove or properly attribute content promptly in accordance with applicable copyright law.
         </p>
         <p className="mb-4 text-gray-700">
           News Call Magazine is not responsible for the accuracy, completeness, or legality of third-party content. By accessing our Services, users agree that they assume all responsibility for any reliance on aggregated content.
@@ -96,7 +97,7 @@ export default function TermsPage() {
         <h2 className="text-2xl font-semibold mt-6 mb-2">Contact</h2>
         <p className="mb-4 text-gray-700">
           If you have questions, concerns, or copyright complaints, please contact us at: <br />
-          <a href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></a>
+          <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>
         </p>
       </main>
 

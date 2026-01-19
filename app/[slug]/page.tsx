@@ -62,12 +62,7 @@ export default function CategoryPage() {
             </div>
 
             {/* Remaining articles */}
-            {articles.length > 3 && (
-              <SectionBlock
-                title={`More in ${category}`}
-                articles={articles.slice(3, 10)}
-              />
-            )}
+            {articles.length > 3 && (<SectionBlock title={`More in ${category}`} articles={articles.slice(3, 10)} />)}
           </>
         )}
       </main>
