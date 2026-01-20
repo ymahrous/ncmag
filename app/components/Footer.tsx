@@ -43,6 +43,7 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-700">
             <li><Link href="/world" target="_blank" className="hover:underline">World</Link></li>
             <li><Link href="/politics" target="_blank" className="hover:underline">Politics</Link></li>
+            <li><Link href="/palestine" target="_blank" className="hover:underline">Palestine</Link></li>
             <li><Link href="/business" target="_blank" className="hover:underline">Business</Link></li>
             <li><Link href="/technology" target="_blank" className="hover:underline">Technology</Link></li>
             <li><Link href="/sports" target="_blank" className="hover:underline">Sports</Link></li>

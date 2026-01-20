@@ -47,7 +47,7 @@ export default function CategoryPage() {
           <p className="text-center py-12 text-gray-500">Loading articles...</p>
         ) : articles.length === 0 ? (
           <p className="text-center py-12 text-gray-500">
-            No articles found for {category}.
+            No articles found for this category.
           </p>
         ) : (
           <>

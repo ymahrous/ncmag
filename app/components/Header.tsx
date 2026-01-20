@@ -19,13 +19,7 @@ export default function Header() {
           <Link href="/" className="hover:none">News Call Magazine</Link>
         </h1>
       </div>
-      <div>
-        <CategoryTabs
-          categories={categories}
-          selected={selected}
-          onSelect={(cat) => window.location.href = `/${cat}`}
-        />
-      </div>
+      <div><CategoryTabs categories={categories} selected={selected} onSelect={(cat) => window.location.href = `/${cat}`} /></div>
     </header>
   );
-}
+};

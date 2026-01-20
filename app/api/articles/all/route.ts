@@ -1,6 +1,5 @@
 import { prisma } from "@/app/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
-
 // const API_SECRET = process.env.ARTICLES_API_SECRET;
 
 export async function GET(req: NextRequest) {
@@ -13,7 +12,6 @@ export async function GET(req: NextRequest) {
   // }
 
   try {
-    // Fetch all articles ordered by publishedAt descending
     const articles = await prisma.article.findMany({
       orderBy: { publishedAt: "desc" },
       select: {
@@ -24,7 +22,7 @@ export async function GET(req: NextRequest) {
         source: true,
         category: true,
         publishedAt: true,
-        imageUrl: true || false
+        imageUrl: true
       },
     });
 
@@ -35,5 +33,5 @@ export async function GET(req: NextRequest) {
       { success: false, error: "Failed to fetch articles" },
       { status: 500 }
     );
-  }
-}
+  };
+};

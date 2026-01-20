@@ -33,4 +33,5 @@ enum Category {
   technology
   sports
   world
+  palestine
 }

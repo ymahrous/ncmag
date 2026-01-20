@@ -27,6 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: "https://ncmag.vercel.app/palestine",
+      lastModified: new Date(),
+    },
+    {
       url: "https://ncmag.vercel.app/about",
       lastModified: new Date(),
     },
