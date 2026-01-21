@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# News Call Magazine
 
-## Getting Started
+This is a digital news platform focused on delivering timely, curated content through a modern, high-performance web application, **with highlighting credit to the original source**. Built with **Next.js** and deployed on **Vercel**, providing editorial clarity with a scalable, production-ready technical architecture.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About the magazine
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This magazine is designed to present news and articles in a clean, accessible format that prioritizes:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Readability** – distraction-free content presentation  
+- **Timeliness** – regularly updated content via automation  
+- **Reliability** – stable, cloud-native delivery  
+- **Scalability** – architecture that grows with content and traffic  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The platform supports both short-form news and longer editorial content, with room to expand into features, series, and special coverage.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Editorial & Product
+- Curated news and article publishing
+- Automated content updates
+- Fully responsive design
+- SEO-friendly structure
+- Fast page loads and optimized rendering
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Technical
+- **Next.js App Router** with server-first rendering
+- Secure API routes using simple authentication
+- **Vercel Cron Jobs** for scheduled tasks
+- Cloud-native deployment on Vercel
+- Structured logging and error handling
+- Internal API orchestration with protected endpoints
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technology Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Layer | Technology |
+|-----|-----------|
+| Framework | Next.js |
+| Runtime | Node.js |
+| Deployment | Vercel |
+| Scheduling | Vercel Cron |
+| API | Next.js Route Handlers |
+| Styling | TailwindCSS / utility-first styling |
+
+---
+
+© News Call Magazine. All rights reserved.
