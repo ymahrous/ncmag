@@ -1,6 +1,6 @@
 # News Call Magazine
 
-This is a digital news platform focused on delivering timely, curated content through a modern, high-performance web application, **with highlighting credit to the original source**. Built with **Next.js** and deployed on **Vercel**, providing editorial clarity with a scalable, production-ready technical architecture.
+This is a digital news platform focused on delivering timely, curated content through a modern, high-performance web application, **highlighting credit to the original source**. Built with **Next.js** and deployed on **Vercel**, providing editorial clarity with a scalable, production-ready technical architecture.
 
 ---
 
