@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import { Libre_Baskerville, Inter } from "next/font/google";
 
 export const serif = Libre_Baskerville({
@@ -21,10 +22,16 @@ export const metadata: Metadata = {
     title: "News Call Magazine",
     description: "B-ringing the news",
     url: "https://ncmag.vercel.app",
-    // images: ["/favicon.ico"],
   },
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
-  return (<html lang="en"><body className={`${serif.variable} ${sans.variable} antialiased`}>{children}</body></html>);
+  return(
+    <html lang="en">
+      <body className={`${serif.variable} ${sans.variable} antialiased`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 };
