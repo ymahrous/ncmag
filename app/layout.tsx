@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Libre_Baskerville, Inter } from "next/font/google";
 
 export const serif = Libre_Baskerville({
@@ -31,6 +32,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       <body className={`${serif.variable} ${sans.variable} antialiased`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
