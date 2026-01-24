@@ -22,15 +22,12 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!serviceId || !templateId || !userId) {
-      setFeedback({ type: "error", message: "Email service is not configured." });
-      console.error("Missing EmailJS config", { serviceId, templateId, userId });
+      setFeedback({ type: "error", message: "Not configured." });
+      console.error("Missing config", { serviceId, templateId, userId });
       return;
     }
-
     setLoading(true);
-
     try {
       await send(
         serviceId,
@@ -42,7 +39,6 @@ export default function ContactPage() {
         },
         userId
       );
-
       setFormData({ name: "", email: "", message: "" });
       setFeedback({ type: "success", message: "Message sent successfully! We'll get back to you soon." });
       toast.success("Message sent!");
@@ -79,7 +75,7 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 placeholder="Your name"
-                className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
+                className="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900"
               />
             </div>
 
@@ -93,7 +89,7 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 placeholder="you@example.com"
-                className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
+                className="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900"
               />
             </div>
 
@@ -107,14 +103,14 @@ export default function ContactPage() {
                 required
                 rows={5}
                 placeholder="Type your message here"
-                className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
+                className="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className={`w-full bg-gray-900 text-white px-6 py-3 rounded hover:bg-gray-700 transition ${
+              className={`w-full px-6 py-3 border border-black hover:bg-black hover:text-white transition ${
                 loading ? "opacity-60 cursor-not-allowed" : "cursor-pointer"
               }`}
             >
@@ -131,4 +127,4 @@ export default function ContactPage() {
       <Footer />
     </div>
   );
-}
+};

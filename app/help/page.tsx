@@ -1,7 +1,6 @@
 "use client";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-
 const FAQS = [
   {
     question: "How do I submit a news tip?",
@@ -26,10 +25,8 @@ export default function HelpPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-
       <main className="grow max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-serif font-bold mb-6">Help & FAQ</h1>
-
+        <h1 className="text-4xl font-serif font-bold mb-6">Help | FAQ</h1>
         <section className="space-y-6">
           {FAQS.map((faq, idx) => (
             <div key={idx}>
@@ -39,7 +36,6 @@ export default function HelpPage() {
           ))}
         </section>
       </main>
-
       <Footer />
     </div>
   );
