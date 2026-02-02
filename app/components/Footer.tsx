@@ -93,8 +93,8 @@ export default function Footer() {
             <p>
               Powered by{" "}
               <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:text-black transition">Next.js</a>
-              {" "}&{" "}
-              <a href="https://newsapi.org" target="_blank" rel="noopener noreferrer" className="hover:text-black transition">NewsAPI</a>
+              {/* {" "}&{" "}
+              <a href="https://newsapi.org" target="_blank" rel="noopener noreferrer" className="hover:text-black transition">NewsAPI</a> */}
             </p>
           </div>
         </div>

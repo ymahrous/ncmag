@@ -6,11 +6,12 @@ import LeadStory from "./components/LeadStory";
 import ArticleRow from "./components/ArticleRow";
 import { useEffect, useState, useMemo } from "react";
 
+ const random_num = Math.floor(Math.random()*10);
+
 export default function HomePage() {
   const [selected, setSelected] = useState("world");
   const [articles, setArticles] = useState<RawArticle[]>([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     async function fetchArticles() {
       setLoading(true);
@@ -21,13 +22,11 @@ export default function HomePage() {
     }
     fetchArticles();
   }, []);
-
   const filtered = useMemo(() => {
     if (selected === "world") return articles;
     return articles.filter(a => a.category === selected);
   }, [articles, selected]);
-
-  const lead = filtered[0];
+  const lead = filtered[random_num];
   const secondary = filtered.slice(1, 4);
 
   return (

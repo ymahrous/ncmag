@@ -1,45 +1,39 @@
-import { RawArticle, GNewsResponse } from '@/types/article';
-// GNewsSource, GNewsArticle,
+import { RawArticle, GNewsArticle, GNewsResponse } from '@/types/article';
 
-export async function fetchGNews(category: string): Promise<RawArticle[]> {
-  const apiKey = process.env.GNEWS_API_KEY;
-  if (!apiKey) {
-    console.error('GNEWS_API_KEY is not defined');
-    return [];
-  }
+const GNEWS_API_KEY = process.env.GNEWS_API_KEY;
+const GNEWS_API_URL = "https://gnews.io/api/v4/top-headlines";
 
-  try {
-    const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&apikey=${apiKey}`;
-    
-    const response = await fetch(url, {
-      next: { revalidate: 3600 } // Cache for 1 hour
-    })
+export async function fetchGNewsArticles(): Promise<RawArticle[]> {
+  if (!GNEWS_API_KEY) return [];
 
-    if (!response.ok) {
-      throw new Error(`GNews API error: ${response.status}`);
+  const categories = ["general", "business", "technology", "sports", "world", "palestine"];
+  const articles: RawArticle[] = [];
+
+  for (const category of categories) {
+    try {
+      const res = await fetch(`${GNEWS_API_URL}?category=${category}&lang=en&max=10&apikey=${GNEWS_API_KEY}`)
+      const data: GNewsResponse = await res.json();
+
+      if (data.articles) {
+        data.articles.forEach((item: GNewsArticle) => {
+          if (!item.url || !item.title) return;
+
+          articles.push({
+            title: item.title,
+            description: item.description,
+            content: item.content,
+            url: item.url,
+            source: item.source?.name || "GNews",
+            category: category === "general" ? "world" : category,
+            publishedAt: item.publishedAt,
+            imageUrl: item.image || undefined
+          })
+        })
+      }
+    } catch (err) {
+      console.error(`Failed to fetch GNews ${category}:`, err);
     }
-
-    const data: GNewsResponse = await response.json();
-
-    if (!data.articles) {
-      console.error('Invalid GNews API response')
-      return [];
-    };
-
-    const articles: RawArticle[] = data.articles.map((article) => ({
-      title: article.title,
-      description: article.description || '',
-      content: article.content || '',
-      source: article.source.name,
-      category: category,
-      publishedAt: article.publishedAt,
-      url: article.url,
-      imageUrl: article.image || ''
-    }));
-
-    return articles;
-  } catch (error) {
-    console.error('Error fetching from GNews:', error);
-    return [];
   };
+
+  return articles;
 };
