@@ -1,8 +1,8 @@
 import { prisma } from "@/app/lib/prisma";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 // const API_SECRET = process.env.ARTICLES_API_SECRET;
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   // const apiKey = req.headers.get("x-api-key");
   // if (!API_SECRET || apiKey !== API_SECRET) {
   //   return NextResponse.json(

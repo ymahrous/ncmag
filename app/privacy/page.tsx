@@ -60,8 +60,7 @@ export default function PrivacyPage() {
         {/* Contact */}
         <h2 className="text-2xl font-semibold mt-6 mb-2">Contact</h2>
         <p className="mb-4 text-gray-700">
-          If you have questions, concerns, or wish to unsubscribe from the newsletter, please contact us at: <br />
-          <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>
+          If you have questions, concerns, or wish to unsubscribe from the newsletter, please <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link> us.
         </p>
       </main>
 

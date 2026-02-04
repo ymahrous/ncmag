@@ -56,9 +56,9 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-700">
             <li><Link href="/about" className="hover:underline">About Us</Link></li>
             <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-            <li><Link href="/help" className="hover:underline">Help</Link></li>
-            <li><Link href="/terms" className="hover:underline">Terms</Link></li>
-            <li><Link href="/privacy" className="hover:underline">Privacy</Link></li>
+            <li><Link href="/help" className="hover:underline">Help / FAQ</Link></li>
+            <li><Link href="/terms" className="hover:underline">Terms & Conditions</Link></li>
+            <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
           </ul>
         </div>
 
@@ -87,6 +87,9 @@ export default function Footer() {
       
       <div className="border-t border-gray-300 mt-8 py-4">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+          <p>
+            <Link href="/unsubscribe">Unsubscribe</Link>
+          </p>
           <p>&copy; {new Date().getFullYear()} News Call Magazine. All rights reserved.</p>
           <div className="flex items-center gap-6 text-xs tracking-wide">
             <a href="https://github.com/ymahrous/ncmag" target="_blank" rel="noopener noreferrer" className="hover:text-black uppercase transition">Source Repo</a>

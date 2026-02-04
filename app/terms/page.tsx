@@ -39,7 +39,7 @@ export default function TermsPage() {
         {/* 4. Legal Compliance and Licensing */}
         <h2 className="text-2xl font-semibold mt-6 mb-2">4. Legal Compliance and Licensing</h2>
         <p className="mb-4 text-gray-700">
-          News Call Magazine respects copyright and intellectual property laws. We strive to properly credit sources and link to original content. If you are a rights holder and believe that your content has been used improperly, please contact us at <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>. We will investigate and remove infringing content promptly.
+          News Call Magazine respects copyright and intellectual property laws. We strive to properly credit sources and link to original content. If you are a rights holder and believe that your content has been used improperly, please <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link> us. We will investigate and remove infringing content promptly.
         </p>
         <p className="mb-4 text-gray-700">
           You agree to use the Services only in accordance with applicable local and international laws.
@@ -96,8 +96,7 @@ export default function TermsPage() {
         {/* Contact */}
         <h2 className="text-2xl font-semibold mt-6 mb-2">Contact</h2>
         <p className="mb-4 text-gray-700">
-          If you have questions, concerns, or copyright complaints, please contact us at: <br />
-          <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link>
+          If you have questions, concerns, or copyright complaints, please <Link href="/contact" target="_blank" className="hover:underline"><strong>contact</strong></Link> us
         </p>
       </main>
 

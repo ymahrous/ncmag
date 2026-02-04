@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     question: "How often is the site updated?",
-    answer: "Our team fetches new articles multiple times per day from trusted sources.",
+    answer: "Our team fetches new articles daily from trusted sources.",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function HelpPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="grow max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-serif font-bold mb-6">Help | FAQ</h1>
+        <h1 className="text-4xl font-serif font-bold mb-6">Frequently Asked Questions</h1>
         <section className="space-y-6">
           {FAQS.map((faq, idx) => (
             <div key={idx}>
