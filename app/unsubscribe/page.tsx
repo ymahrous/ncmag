@@ -1,15 +1,11 @@
 "use client";
-
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { useSearchParams } from "next/navigation";
+import { useState, type FormEvent } from "react";
 
 export default function UnsubscribePage() {
-  const searchParams = useSearchParams();
-  const emailFromUrl = searchParams.get("email");
-  const [email, setEmail] = useState(emailFromUrl || "");
+  const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
