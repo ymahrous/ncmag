@@ -1,6 +1,7 @@
 "use client";
+
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { useSearchParams } from "next/navigation";
@@ -12,7 +13,7 @@ export default function UnsubscribePage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
-  const handleUnsubscribe = async (e: React.FormEvent) => {
+  const handleUnsubscribe = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -44,17 +45,16 @@ export default function UnsubscribePage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="grow max-w-2xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-serif text-center font-bold mb-6">Unsubscribe from Newsletter</h1>
+        <h1 className="text-4xl font-serif text-center font-bold mb-6">
+          Unsubscribe from Newsletter
+        </h1>
         {status === "success" ? (
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
             <p className="text-green-800 mb-4">{message}</p>
             <p className="text-gray-700">
               We{"’"}re sorry to see you go! You will no longer receive newsletters from News Call Magazine.
             </p>
-            <Link 
-              href="/" 
-              className="inline-block mt-4 text-blue-600 hover:underline"
-            >
+            <Link href="/" className="inline-block mt-4 text-blue-600 hover:underline">
               Return to homepage
             </Link>
           </div>
@@ -84,12 +84,18 @@ export default function UnsubscribePage() {
                   <p className="text-red-800">{message}</p>
                 </div>
               )}
-              <button type="submit" disabled={status === "loading"} className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 {status === "loading" ? "Unsubscribing..." : "Unsubscribe"}
               </button>
             </form>
             <p className="text-sm text-center text-gray-600">
-              <Link href="/" className="mt-8 inline-block border border-black px-6 py-3 text-sm font-medium hover:bg-black hover:text-white transition">Back to Home</Link>
+              <Link href="/" className="mt-8 inline-block border border-black px-6 py-3 text-sm font-medium hover:bg-black hover:text-white transition">
+                Back to Home
+              </Link>
             </p>
           </>
         )}
@@ -98,6 +104,4 @@ export default function UnsubscribePage() {
       <Footer />
     </div>
   );
-};
-
-export const dynamic = "force-dynamic";
+}
