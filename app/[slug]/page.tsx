@@ -18,7 +18,11 @@ export default function CategoryPage() {
     async function fetchArticles() {
       try {
         setLoading(true);
-        const res = await fetch("/api/articles/all");
+        const res = await fetch("/api/articles/all", {
+          headers: {
+            "x-api-key": process.env.NEXT_PUBLIC_API_SECRET!,
+          },
+        });
         const data = await res.json();
         if (data.success) {
           const normalized = data.articles.filter((a: RawArticle) => a.category?.toLowerCase() === category).map((a: RawArticle) => ({...a, source: typeof a.source === "string"? a.source: a.source?.name ?? "Unknown", category: a.category ?? "Uncategorized"}));

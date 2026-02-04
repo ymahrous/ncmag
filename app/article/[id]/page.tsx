@@ -20,7 +20,11 @@ export default function ArticlePage() {
     async function fetchArticles() {
       setLoading(true);
       try {
-        const res = await fetch("/api/articles/all");
+        const res = await fetch("/api/articles/all", {
+          headers: {
+            "x-api-key": process.env.NEXT_PUBLIC_API_SECRET!,
+          },
+        });
         const data = await res.json();
         if (data.success) {
           const found = data.articles.find((a: RawArticle) => slugify(a.title) === slug);

@@ -99,3 +99,5 @@ export default function UnsubscribePage() {
     </div>
   );
 };
+
+export const dynamic = "force-dynamic";

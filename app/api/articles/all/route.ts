@@ -1,15 +1,16 @@
 import { prisma } from "@/app/lib/prisma";
-import { NextResponse } from "next/server";
-// const API_SECRET = process.env.ARTICLES_API_SECRET;
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
-  // const apiKey = req.headers.get("x-api-key");
-  // if (!API_SECRET || apiKey !== API_SECRET) {
-  //   return NextResponse.json(
-  //     { success: false, error: "Unauthorized" },
-  //     { status: 401 }
-  //   );
-  // }
+const API_SECRET = process.env.ARTICLES_API_SECRET;
+
+export async function GET(req: NextRequest) {
+  const apiKey = req.headers.get("x-api-key");
+  if (!API_SECRET || apiKey !== API_SECRET) {
+    return NextResponse.json(
+      { success: false, error: "Unauthorized" },
+      { status: 401 }
+    );
+  }
 
   try {
     const articles = await prisma.article.findMany({

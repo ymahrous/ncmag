@@ -15,7 +15,11 @@ export default function HomePage() {
   useEffect(() => {
     async function fetchArticles() {
       setLoading(true);
-      const res = await fetch("/api/articles/all");
+      const res = await fetch("/api/articles/all", {
+        headers: {
+          "x-api-key": process.env.NEXT_PUBLIC_API_SECRET!,
+        },
+      });
       const data = await res.json();
       if (data.success) setArticles(data.articles);
       setLoading(false);
