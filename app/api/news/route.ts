@@ -18,9 +18,13 @@ export async function GET(req: NextRequest) {
 
   try {
     const newsApiArticles = await fetchNewsApiArticles();
-    const newsDataArticles = await fetchNewsDataArticles();
-    const gNewsArticles = await fetchGNewsArticles();
-    const allArticles = [...gNewsArticles, ...newsDataArticles, ...newsApiArticles];
+    // const newsDataArticles = await fetchNewsDataArticles();
+    // const gNewsArticles = await fetchGNewsArticles();
+    const allArticles = [
+      // ...gNewsArticles, 
+      // ...newsDataArticles,
+      ...newsApiArticles
+    ];
     let savedCount = 0;
 
     for (const raw of allArticles) {
