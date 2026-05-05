@@ -13,21 +13,34 @@ export async function GET(req: NextRequest) {
   }
 
   try {
+    const url = new URL(req.url);
+    const page = Math.max(1, parseInt(url.searchParams.get("page") || "1"));
+    const limit = Math.min(50, parseInt(url.searchParams.get("limit") || "50"));
+    const skip = (page - 1) * limit;
+
     const articles = await prisma.article.findMany({
       orderBy: { publishedAt: "desc" },
       select: {
+        id: true,
         title: true,
         description: true,
-        content: true,
         url: true,
         source: true,
         category: true,
         publishedAt: true,
         imageUrl: true
       },
+      skip,
+      take: limit,
     });
 
-    return NextResponse.json({ success: true, total: articles.length, articles });
+    return NextResponse.json({ 
+      success: true, 
+      total: articles.length, 
+      page,
+      limit,
+      articles 
+    });
   } catch (err) {
     console.error("Fetch all articles error:", err);
     return NextResponse.json(

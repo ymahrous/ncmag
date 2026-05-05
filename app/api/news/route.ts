@@ -18,11 +18,11 @@ export async function GET(req: NextRequest) {
 
   try {
     const newsApiArticles = await fetchNewsApiArticles();
-    // const newsDataArticles = await fetchNewsDataArticles();
-    // const gNewsArticles = await fetchGNewsArticles();
+    const newsDataArticles = await fetchNewsDataArticles();
+    const gNewsArticles = await fetchGNewsArticles();
     const allArticles = [
-      // ...gNewsArticles, 
-      // ...newsDataArticles,
+      ...gNewsArticles, 
+      ...newsDataArticles,
       ...newsApiArticles
     ];
     let savedCount = 0;
