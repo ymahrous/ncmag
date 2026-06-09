@@ -14,11 +14,8 @@ export default function CategoryTabs({ categories, selected, onSelect }: Props) 
           <li key={cat}>
             <button
               onClick={() => onSelect(cat)}
-              className={`
-                capitalize whitespace-nowrap pb-1 transition-colors duration-200
-                ${selected === cat 
-                  ? "text-black border-b-2 border-black font-semibold" 
-                  : "text-gray-600 hover:text-black"}
+              className={`category-tab capitalize whitespace-nowrap pb-1
+                ${selected === cat ? "active" : ""}
               `}
             >
               {cat}

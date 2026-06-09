@@ -1,6 +1,8 @@
 "use client";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import FAQAccordion from "@/app/components/FAQAccordion";
+
 const FAQS = [
   {
     question: "What is News Call Magazine?",
@@ -48,16 +50,14 @@ export default function HelpPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="grow max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-serif font-bold mb-6">Frequently Asked Questions</h1>
-        <section className="space-y-6">
-          {FAQS.map((faq, idx) => (
-            <div key={idx}>
-              <h2 className="text-xl font-semibold mb-1">{faq.question}</h2>
-              <p className="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
+      <main className="grow max-w-4xl mx-auto px-4 py-16">
+        <section className="mb-12">
+          <h1 className="text-5xl font-serif font-bold mb-6">Frequently Asked Questions</h1>
+          <p className="text-lg text-gray-700">
+            Find answers to common questions about News Call Magazine. If you can't find what you're looking for, feel free to <a href="/contact" className="font-bold hover:underline">contact us</a>.
+          </p>
         </section>
+        <FAQAccordion items={FAQS} />
       </main>
       <Footer />
     </div>
